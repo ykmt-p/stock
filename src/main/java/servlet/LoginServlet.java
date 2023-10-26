@@ -34,13 +34,8 @@ public class LoginServlet extends HttpServlet {
     
  // Loginオブジェクトを作成
     Login login = new Login(user_id, pass);
-
- // ログイン認証後に遷移する先を格納する
-    String path = "";
-          
-
-            // ユーザーIDとパスワードが一致するユーザーが存在した時
-            if (res.next()) {
+    // ユーザーIDとパスワードが一致するユーザーが存在した時
+    	if (res.next()) {
             	//セッションに登録するユーザーIDを設定
             	Login loggedInUserId = new Login("user_id",user_id);
                 // user_idをセッションに設定する
