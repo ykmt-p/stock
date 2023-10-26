@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+/* 共通 */
+html {
+	font-size: 100%;
+	max-width: 800px;
+	margin:20px 80px;
+}
+body {
+	line-height: 2;
+	color:#432;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style-type: circle;
+}
+img {
+	max-width: 100%;
+}
+h2 {
+	font-size: medium;
+}
+form div {
+	margin-bottom: 14px;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+	background: none;
+	border:1px rgb(202, 226, 227) solid;
+	border-radius: 5px;
+	padding: 7px;
+	font-size: 1rem;
+}
+input[type="text"],
+input[type="email"] {
+	width: 70%;
+	max-width: 240px;
+}
+textarea {
+	width: 100%;
+	max-width: 480px;
+	height: 6rem;
+}
+input[type="submit"] {
+	background: #f1efe7;
+	border: none;
+	cursor: pointer;
+	line-height: 2;
+}
+select {
+	background: none;
+	border:1px rgb(202, 226, 227) solid;
+	border-radius: 5px;
+	padding: 7px;
+	font-size: 1rem;
+}
+
+/* header */
+.container {
+	display: flex;
+	justify-content: center;
+}
+.logo {
+	width:fit-content;
+	border-radius: 15px;
+}
+
+/* index */
+button {
+	background-color: #f1efe7;
+	border-radius: 10px;
+	padding: 3px 12px;
+	margin-right: 25px;
+	align-items: center;
+}
+#toggleButton {
+	display: flex;
+	justify-content: right;
+}
+.hidden {
+	display: none;
+	justify-content: right;
+}
+li .brown {
+	color: #784e01 ;
+	font-weight: bold;
+}
+li .pink {
+	color: #f8cdcd;
+	font-weight: bold;
+}
+article {
+	width: 40%;
+}
+aside {
+	width: 40%;
+}
+.wrapper {
+	display:flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 20px;
+}
+.buyList {
+	border-radius: 15px;
+}
+.stockList {
+	border-radius: 15px;
+}
+
+/* buyList */
+#buyListForm {
+    border: 2px solid #f08b8b; /* ボーダーのスタイルと色を設定 */
+    /*background-color: #f08b8b; /* 背景色を設定 */
+    border-radius: 10px;
+    padding: 10px; /* フォーム内の要素からの内部余白を追加 (オプション) */
+    width: 100%;
+    max-width: 480px;
+}
+    
