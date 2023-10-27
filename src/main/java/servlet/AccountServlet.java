@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.AccountsDAO;
+import dao.RegistrationDAO;
 import model.Account;
 
 
@@ -34,11 +34,11 @@ public class AccountServlet extends HttpServlet {
 	    // Accountオブジェクトを作成
 	    Account account = new Account(user_id, pass, mail, name);
 
-	    // AccountsDAOを使用してユーザーの登録を試みる
-	    AccountsDAO accountsDAO = new AccountsDAO();
+	    // RegistrationDAOを使用してユーザーの登録を試みる
+	    RegistrationDAO registrationDAO = new RegistrationDAO();
 	    
-        // createメソッドの戻り値（エラーメッセージ）を取得
-        String errorMessage = accountsDAO.create(account);
+        // createメソッドの戻り値（エラーメッセージ）を取得    
+        String errorMessage = registrationDAO.create(account);
         
         if (errorMessage == null) {
             // 登録成功の処理

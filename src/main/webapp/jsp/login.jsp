@@ -7,7 +7,8 @@
 <title>STOCK</title>
 </head>
 <body>
-
+<%-- メッセージを表示 --%>
+    <p>${requestScope.message}</p>
 <!-- ログインフォーム。ユーザーIDとパスワードの入力を行う -->
 <form action="Login" method="post">
     ユーザーID：<input type="text" name="user_id"><br>
