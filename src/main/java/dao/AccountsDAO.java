@@ -13,7 +13,7 @@ public class AccountsDAO {
     private static final String DB_USER = "sa";
     private static final String DB_PASS = "";
     
-    public boolean create(Account account) {
+    public  String create(Account account) {
     	//JDBCドライバを読み込む
     	try {
     		Class.forName("org.h2.Driver");
@@ -42,15 +42,12 @@ public class AccountsDAO {
         	int emailCount = emailResultSet.getInt(1);
         	
         	if (userCount > 0 && emailCount > 0) {
-        	    // ユーザー名とメールアドレスの両方が既に存在する場合
-        	    throw new IllegalStateException("ユーザー名とメールアドレスの両方が既に存在します");
-        	} else if (userCount > 0) {
-        	    // ユーザー名が既に存在する場合
-        	    throw new IllegalStateException("ユーザー名が既に存在します");
-        	} else if (emailCount > 0) {
-        	    // メールアドレスが既に存在する場合
-        	    throw new IllegalStateException("メールアドレスが既に存在します");
-        	} else {
+                return "ユーザー名とメールアドレスの両方が既に存在します。ログインから再度入り直していただけますでしょうか";
+            } else if (userCount > 0) {
+                return "ユーザー名が既に存在します";
+            } else if (emailCount > 0) {
+                return "メールアドレスが既に存在します";
+            } else {
             	//INSERT文中の「？」に使用する値を設定してSQL文を完成
                 insertStmt.setString(1, account.getUser_id());
                 insertStmt.setString(2, account.getPass());
@@ -58,16 +55,15 @@ public class AccountsDAO {
                 insertStmt.setString(4, account.getName());
 
                 int rowCount = insertStmt.executeUpdate();
-
                 if (rowCount > 0) {
-                    return true; //登録に成功
+                    return null; //登録に成功
                 } else {
-                    return false; //登録に失敗
+                    return "登録に失敗しました"; //登録に失敗
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            return "データベースエラーが発生しました";
         }
     }
     

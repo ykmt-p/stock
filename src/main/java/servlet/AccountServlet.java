@@ -37,19 +37,19 @@ public class AccountServlet extends HttpServlet {
 	    // AccountsDAOを使用してユーザーの登録を試みる
 	    AccountsDAO accountsDAO = new AccountsDAO();
 	    
-	    try {
-	        boolean registrationSuccess = accountsDAO.create(account);
-	        if (registrationSuccess) {
-	            // 登録成功の処理
-	            // 例: ログイン画面にフォワード
-	        	 RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/accountOK.jsp");
-	 	        dispatcher.forward(request, response);
-	 	    }
-	    } catch (IllegalStateException e) {
-	        // 登録に失敗した場合、エラーメッセージをセットして新規登録画面にフォワード
-	        request.setAttribute("loginFailure", e.getMessage());
-	        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/newAccount.jsp");
-	        dispatcher.forward(request, response);
-	    }
+        // createメソッドの戻り値（エラーメッセージ）を取得
+        String errorMessage = accountsDAO.create(account);
+        
+        if (errorMessage == null) {
+            // 登録成功の処理
+            // 例: ログイン画面にフォワード
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/accountOK.jsp");
+            dispatcher.forward(request, response);
+        } else {
+            // 登録に失敗した場合、エラーメッセージをセットして新規登録画面にフォワード
+            request.setAttribute("errorMessage", errorMessage);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/newAccount.jsp");
+            dispatcher.forward(request, response);
+        }
 	}
 }
