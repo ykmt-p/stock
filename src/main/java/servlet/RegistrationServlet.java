@@ -10,11 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.RegistrationDAO;
-import model.Account;
-
-
-@WebServlet("/Account")
-public class AccountServlet extends HttpServlet {
+import model.Registration;
+@WebServlet("/Registration")
+public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
@@ -31,23 +29,24 @@ public class AccountServlet extends HttpServlet {
 	    String mail = request.getParameter("mail");
 	    String name = request.getParameter("name");
 
-	    // Accountオブジェクトを作成
-	    Account account = new Account(user_id, pass, mail, name);
+	    // Registrationオブジェクトを作成
+	    Registration registration = new Registration(user_id, pass, mail, name);
 
 	    // RegistrationDAOを使用してユーザーの登録を試みる
 	    RegistrationDAO registrationDAO = new RegistrationDAO();
 	    
         // createメソッドの戻り値（エラーメッセージ）を取得    
-        String errorMessage = registrationDAO.create(account);
-        
-        if (errorMessage == null) {
+        String result = registrationDAO.create(registration);
+        System.out.println("Result: " + result); // この行を追加
+        if (result == user_id) {
             // 登録成功の処理
-            // 例: ログイン画面にフォワード
+        	request.setAttribute("message", "新規登録が完了しました！");
+            request.setAttribute("user_id", result); // ユーザー名をリクエスト属性に設定
             RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/accountOK.jsp");
             dispatcher.forward(request, response);
         } else {
             // 登録に失敗した場合、エラーメッセージをセットして新規登録画面にフォワード
-            request.setAttribute("errorMessage", errorMessage);
+            request.setAttribute("errorMessage", result);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/newAccount.jsp");
             dispatcher.forward(request, response);
         }

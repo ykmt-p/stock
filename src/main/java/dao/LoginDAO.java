@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import model.Login;
 
-public class AccountsDAO {
+public class LoginDAO { 
 	//データベース接続に使う情報
     private static final String JDBC_URL = "jdbc:h2:tcp://localhost/~/example";
     private static final String DB_USER = "sa";

@@ -13,7 +13,7 @@
 
 <body>
 <div class="container">
-    <a href="jsp/index.jsp"><img class="logo" src="<c:url value='/images/logo.png' />" alt="STOCK"></a>
+    <a href="Main"><img class="logo" src="<c:url value='/images/logo.png' />" alt="STOCK"></a>
 </div>
 </body>
 </html>

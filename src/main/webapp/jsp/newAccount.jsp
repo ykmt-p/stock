@@ -13,7 +13,7 @@
     <div class="alert alert-danger">${errorMessage}</div>
 </c:if>
  <!-- 新規登録フォーム。ユーザー情報の入力を行う -->
-<form action="Account" method="post">
+<form action="Registration" method="post">
     ユーザーID：<input type="text" name="user_id"><br>
     パスワード：<input type="password" name="pass"><br>
     メールアドレス：<input type="text" name="mail"><br>

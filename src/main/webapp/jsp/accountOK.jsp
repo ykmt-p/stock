@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>新規登録が完了しました！</h1>
-<h2>よろしくね！<%= request.getAttribute("user_id") %>さん</h2>
+<h2>よろしくね！<c:out value="${user_id}" />さん</h2>
 <a href="Main">トップページへ</a>
 </body>
 </html>

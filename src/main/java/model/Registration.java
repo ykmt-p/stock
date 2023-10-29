@@ -2,14 +2,14 @@ package model;
 
 import java.io.Serializable;
 
-public class Account implements Serializable {
+public class Registration implements Serializable {
   private String user_id;
   private String pass;
   private String mail;
   private String name;
 
-  public Account () {}
-  public Account(String user_id, String pass, String mail, String name) {
+  public Registration () {}
+  public Registration(String user_id, String pass, String mail, String name) {
     this.user_id = user_id;
     this.pass = pass;
     this.mail = mail;

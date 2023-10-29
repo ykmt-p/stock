@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.AccountsDAO;
+import dao.LoginDAO;
 import model.Login;
 
 @WebServlet("/Login")
@@ -30,10 +30,10 @@ public class LoginServlet extends HttpServlet {
 	    Login login = new Login(user_id,pass);
 	    
 	 // AccountsDAOクラスのインスタンスを作成
-	    AccountsDAO accountsDAO = new AccountsDAO();
+	    LoginDAO loginDAO = new LoginDAO();
 
 	    // ログインメソッドを呼び出し
-	    boolean success = accountsDAO.login(login);
+	    boolean success = loginDAO.login(login);
 
 	    if (success) {
 	        // ログイン成功時の処理

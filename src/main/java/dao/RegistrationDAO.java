@@ -6,16 +6,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import model.Account;
+import model.Registration;
 
-public class RegistrationDAO {
+public class RegistrationDAO { 
 	//データベース接続に使う情報
     private static final String JDBC_URL = "jdbc:h2:tcp://localhost/~/example";
     private static final String DB_USER = "sa";
     private static final String DB_PASS = "";
     
     //新規登録の処理
-    public  String create(Account account) {
+    public  String create(Registration registration) {
     	//JDBCドライバを読み込む
     	try {
     		Class.forName("org.h2.Driver");
@@ -33,12 +33,12 @@ public class RegistrationDAO {
     	    PreparedStatement insertStmt = conn.prepareStatement(insertSQL);
     	    
     	    // ユーザー名の一意性をチェック
-        	selectUserStmt.setString(1, account.getUser_id());
+        	selectUserStmt.setString(1, registration.getUser_id());
         	ResultSet userResultSet = selectUserStmt.executeQuery();
         	userResultSet.next();
         	int userCount = userResultSet.getInt(1);
         	// メールアドレスの一意性をチェック
-        	selectEmailStmt.setString(1, account.getMail());
+        	selectEmailStmt.setString(1, registration.getMail());
         	ResultSet emailResultSet = selectEmailStmt.executeQuery();
         	emailResultSet.next();
         	int emailCount = emailResultSet.getInt(1);
@@ -51,14 +51,14 @@ public class RegistrationDAO {
                 return "メールアドレスが既に存在します";
             } else {
             	//INSERT文中の「？」に使用する値を設定してSQL文を完成
-                insertStmt.setString(1, account.getUser_id());
-                insertStmt.setString(2, account.getPass());
-                insertStmt.setString(3, account.getMail());
-                insertStmt.setString(4, account.getName());
+                insertStmt.setString(1, registration.getUser_id());
+                insertStmt.setString(2, registration.getPass());
+                insertStmt.setString(3, registration.getMail());
+                insertStmt.setString(4, registration.getName());
 
                 int rowCount = insertStmt.executeUpdate();
                 if (rowCount > 0) {
-                    return null; //登録に成功
+                    return registration.getUser_id(); // 登録に成功した場合にユーザー名を返す
                 } else {
                     return "登録に失敗しました"; //登録に失敗
                 }
