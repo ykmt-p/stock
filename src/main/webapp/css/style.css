@@ -9,12 +9,13 @@ html {
 body {
 	line-height: 2;
 	color:#432;
+	background-color: rgb(255, 249, 244);
 }
 a {
 	text-decoration: none;
 }
 ul {
-	list-style-type: circle;
+	list-style-type: none;
 }
 img {
 	max-width: 100%;
@@ -27,15 +28,18 @@ form div {
 }
 input[type="text"],
 input[type="email"],
+input[type="password"],
 textarea {
 	background: none;
 	border:1px rgb(202, 226, 227) solid;
 	border-radius: 5px;
 	padding: 7px;
 	font-size: 1rem;
+	vertical-align: top;
 }
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+input[type="password"] {
 	width: 70%;
 	max-width: 240px;
 }
@@ -45,11 +49,33 @@ textarea {
 	height: 6rem;
 }
 input[type="submit"] {
-	background: #f1efe7;
+	background: #ebe4c9;
 	border: none;
+	border-radius: 5px;
 	cursor: pointer;
 	line-height: 2;
+	padding: 1px 8px;
 }
+input[type="checkbox"] {
+  /* チェックボックスの外枠 */
+  appearance: none; /* デフォルトのスタイルを削除 */
+  width: 20px;
+  height: 20px;
+  border: 2px solid #3d07ff; /* チェックボックスの色 */
+
+  &:checked::before {
+    /* チェックボックスの内側の✓ */
+    display: block;
+    content: "✓";
+    line-height: 1.2;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #3d07ff; /* チェックマークの色 */
+    opacity: 1;
+  }
+}
+
 select {
 	background: none;
 	border:1px rgb(202, 226, 227) solid;
@@ -70,7 +96,7 @@ select {
 
 /* index */
 button {
-	background-color: #f1efe7;
+	background-color: #ebe4c9;
 	border-radius: 10px;
 	padding: 3px 12px;
 	margin-right: 25px;
@@ -84,12 +110,15 @@ button {
 	display: none;
 	justify-content: right;
 }
+.circle ul {
+	list-style-type: circle;
+}
 li .brown {
-	color: #784e01 ;
+	color: rgb(142, 90, 20);
 	font-weight: bold;
 }
 li .pink {
-	color: #f8cdcd;
+	color: rgb(235, 182, 191);
 	font-weight: bold;
 }
 article {
@@ -104,20 +133,26 @@ aside {
 	align-items: center;
 	margin: 20px;
 }
-.buyList {
+.shoppingList {
 	border-radius: 15px;
 }
 .stockList {
 	border-radius: 15px;
 }
-
-/* buyList */
-#buyListForm {
-    border: 2px solid #f08b8b; /* ボーダーのスタイルと色を設定 */
+/*shoppingList*/
+#addShoppingButton {
+	max-width: 120px;
+}
+.shoppingListTitle {
+	display: flex;
+	justify-content: center;
+}
+/* addShoppingList */
+#shoppingListForm {
+    border: 2px dashed rgb(240, 164, 163); /* ボーダーのスタイルと色を設定 */
     /*background-color: #f08b8b; /* 背景色を設定 */
     border-radius: 10px;
     padding: 10px; /* フォーム内の要素からの内部余白を追加 (オプション) */
     width: 100%;
     max-width: 480px;
 }
-    

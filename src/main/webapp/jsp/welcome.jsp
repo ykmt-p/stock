@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" 
     pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +12,11 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<ul>
-<li><a href="Login">ログイン</a></li>
-<li><a href="Account">ユーザー登録</a></li>
-</ul>
+<form action="Login" method="get">
+	<input type="submit" value="ログイン"/>
+</form>
+<form action="Registration" method="get">
+	<input type="submit" value="ユーザー登録"/>
+</form>
 </body>
 </html>

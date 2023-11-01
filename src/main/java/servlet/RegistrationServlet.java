@@ -35,9 +35,9 @@ public class RegistrationServlet extends HttpServlet {
 	    // RegistrationDAOを使用してユーザーの登録を試みる
 	    RegistrationDAO registrationDAO = new RegistrationDAO();
 	    
-        // createメソッドの戻り値（エラーメッセージ）を取得    
+        // createメソッドの戻り値（user_idかエラーメッセージ）を取得    
         String result = registrationDAO.create(registration);
-        System.out.println("Result: " + result); // この行を追加
+   
         if (result == user_id) {
             // 登録成功の処理
         	request.setAttribute("message", "新規登録が完了しました！");

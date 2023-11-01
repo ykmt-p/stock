@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.LoginDAO;
 import model.Login;
@@ -29,7 +30,7 @@ public class LoginServlet extends HttpServlet {
 	    // Loginクラスのインスタンスを作成
 	    Login login = new Login(user_id,pass);
 	    
-	 // AccountsDAOクラスのインスタンスを作成
+	    // LoginDAOクラスのインスタンスを作成
 	    LoginDAO loginDAO = new LoginDAO();
 
 	    // ログインメソッドを呼び出し
@@ -40,6 +41,9 @@ public class LoginServlet extends HttpServlet {
 	        // メッセージを設定
 	        request.setAttribute("message", "ログインに成功しました");
 	        System.out.println("ログイン成功");
+	        // user_idをセッションに保存
+	        HttpSession session = request.getSession();
+	        session.setAttribute("user_id", user_id);
 	        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/index.jsp");
 	        dispatcher.forward(request, response);
 	    } else {
