@@ -27,7 +27,7 @@ public class RegistrationDAO {
     		//INSERT文の準備
     		String selectUserSQL = "SELECT COUNT(*) FROM ACCOUNTS WHERE USER_ID = ?";
     	    String selectEmailSQL = "SELECT COUNT(*) FROM ACCOUNTS WHERE MAIL = ?";
-    	    String insertSQL = "INSERT INTO ACCOUNTS (USER_ID, PASS, MAIL, NAME) VALUES ( ?, ?, ?, ?)";
+    	    String insertSQL = "INSERT INTO ACCOUNTS (USER_ID, PASS, MAIL) VALUES ( ?, ?, ?)";
     	    PreparedStatement selectUserStmt = conn.prepareStatement(selectUserSQL);
     	    PreparedStatement selectEmailStmt = conn.prepareStatement(selectEmailSQL);	
     	    PreparedStatement insertStmt = conn.prepareStatement(insertSQL);
@@ -44,7 +44,7 @@ public class RegistrationDAO {
         	int emailCount = emailResultSet.getInt(1);
         	
         	if (userCount > 0 && emailCount > 0) {
-                return "ユーザー名とメールアドレスの両方が既に存在します。ログインから再度入り直していただけますでしょうか";
+                return "ユーザー名とメールアドレスの両方が既に存在します。ログインから再度入り直してください。";
             } else if (userCount > 0) {
                 return "ユーザー名が既に存在します";
             } else if (emailCount > 0) {
@@ -54,7 +54,6 @@ public class RegistrationDAO {
                 insertStmt.setString(1, registration.getUser_id());
                 insertStmt.setString(2, registration.getPass());
                 insertStmt.setString(3, registration.getMail());
-                insertStmt.setString(4, registration.getName());
 
                 int rowCount = insertStmt.executeUpdate();
                 if (rowCount > 0) {

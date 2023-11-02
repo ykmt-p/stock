@@ -16,11 +16,11 @@
 	<div class="item"><a href="ShoppingList"><img class="outerBorder" src="<c:url value='/images/miniShoppingList.png' />" alt="お買い物リスト"></a></div>
 	<div class="item"><a href="StockList"><img class="outerBorder" src="<c:url value='/images/miniInventoryList.png' />" alt="ストックリスト"></a></div>
 </div>
-<h1 class="formTitle">お買い物リストに追加</h1>
+	<h1 class="formTitle">ストックリストに追加</h1>
 		<c:if test="${product_name != null}">
     		<h2><c:out value="${product_name}"/>を追加しました！</h2>
 		</c:if>
-	<form id="listForm" class="addListForm" action="AddShoppingList" method="post">
+	<form id="listForm" class="addListForm" action="AddStockList" method="post">
 	 	<div>
 	 		<label for="name">品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名*：</label>
 	 		<input type="text" name="product_name">
@@ -29,9 +29,9 @@
 	   	 	<label for="name">取扱い店：</label>
 	   	 	<input type="text" name="store">
 	    </div>
-        <!-- 必要数量は常に0として送信 -->
-        <input type="hidden" name="quantity" value="0">
-	    <input class="right" type="submit" value="お買い物リストに追加">
+        <!-- 必要数量は常に1として送信 -->
+        <input type="hidden" name="quantity" value="1">
+	    <input class="right" type="submit" value="ストックリストに追加">
 	</form>
 </body>
 <script src="javaScript/validation.js"></script>

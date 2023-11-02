@@ -10,6 +10,7 @@ body {
 	line-height: 2;
 	color:#432;
 	background-color: rgb(255, 249, 244);
+	max-width: 800px;
 }
 a {
 	text-decoration: none;
@@ -23,7 +24,14 @@ img {
 h2 {
 	font-size: medium;
 }
-form div {
+.center {
+	display: flex;
+	justify-content: center;
+}
+.mini {
+	max-width: 150px;
+}
+form div{
 	margin-bottom: 14px;
 }
 input[type="text"],
@@ -31,7 +39,7 @@ input[type="email"],
 input[type="password"],
 textarea {
 	background: none;
-	border:1px rgb(202, 226, 227) solid;
+	border:3px #ebe4c9 solid;
 	border-radius: 5px;
 	padding: 7px;
 	font-size: 1rem;
@@ -61,8 +69,8 @@ input[type="checkbox"] {
   appearance: none; /* デフォルトのスタイルを削除 */
   width: 20px;
   height: 20px;
-  border: 2px solid #3d07ff; /* チェックボックスの色 */
-
+  border: 2px solid #ebe4c9; /* チェックボックスの色 */
+  cursor: pointer;
   &:checked::before {
     /* チェックボックスの内側の✓ */
     display: block;
@@ -71,11 +79,18 @@ input[type="checkbox"] {
     text-align: center;
     font-size: 14px;
     font-weight: 700;
-    color: #3d07ff; /* チェックマークの色 */
+    color: rgb(196, 161, 95); /* チェックマークの色 */
     opacity: 1;
+    
   }
 }
-
+.wrapper {
+	display:flex;
+}
+.item {
+	justify-content: space-around;
+	margin: 10px;
+}
 select {
 	background: none;
 	border:1px rgb(202, 226, 227) solid;
@@ -83,15 +98,48 @@ select {
 	padding: 7px;
 	font-size: 1rem;
 }
-
-/* header */
-.container {
-	display: flex;
-	justify-content: center;
+.title {
+	margin-top: 200px;
+	margin-bottom: 30px;
 }
+.formTitle {
+	margin-top: 80px;
+	margin-bottom: 30px;
+}
+/* welcome */
+.introduction {
+	margin-bottom: 40px;
+}
+.welcomeButtonContainar {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+#loginButton {
+	margin: 10px 0px 50px 230px;
+}
+/* newAccount */
+#registrationButton {
+	margin: 10px;
+}
+.alert alert-danger {
+	color: rgb(203, 51, 53);
+	margin-bottom: 20px;
+}
+/* header */
 .logo {
 	width:fit-content;
 	border-radius: 15px;
+}
+/* footer */
+footer {
+	background-color: rgb(107, 80, 54);
+	text-align: center;
+	padding: 26px 0;
+}
+footer p {
+	color: #fff;
+	font-size: 0.875rem;
 }
 
 /* index */
@@ -105,6 +153,7 @@ button {
 #toggleButton {
 	display: flex;
 	justify-content: right;
+	margin: 40px;
 }
 .hidden {
 	display: none;
@@ -113,46 +162,42 @@ button {
 .circle ul {
 	list-style-type: circle;
 }
-li .brown {
-	color: rgb(142, 90, 20);
+li .blue {
+	color: rgb(189, 212, 214);
 	font-weight: bold;
 }
 li .pink {
 	color: rgb(235, 182, 191);
 	font-weight: bold;
 }
-article {
-	width: 40%;
+li .orange {
+	color: #ffc35a;
+	font-weight: bold;
 }
-aside {
-	width: 40%;
+.item p {
+	margin: 50px 80px;
 }
-.wrapper {
-	display:flex;
-	justify-content: space-around;
-	align-items: center;
-	margin: 20px;
-}
-.shoppingList {
-	border-radius: 15px;
-}
-.stockList {
+.outerBorder {
 	border-radius: 15px;
 }
 /*shoppingList*/
-#addShoppingButton {
-	max-width: 120px;
-}
 .shoppingListTitle {
 	display: flex;
 	justify-content: center;
 }
+#list {
+	border: 5px double rgb(203, 141, 62);
+    padding: 20px;
+}
 /* addShoppingList */
-#shoppingListForm {
-    border: 2px dashed rgb(240, 164, 163); /* ボーダーのスタイルと色を設定 */
-    /*background-color: #f08b8b; /* 背景色を設定 */
+.addListForm {
+    border: 5px dashed rgb(202, 226, 227);
     border-radius: 10px;
-    padding: 10px; /* フォーム内の要素からの内部余白を追加 (オプション) */
+    padding: 30px;
     width: 100%;
     max-width: 480px;
 }
+.right {
+	margin-left: 200px;
+}
+

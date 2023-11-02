@@ -12,35 +12,39 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-<h1 class="container">STOCKへようこそ</h1>
-<div class="container">
+<div class="center">
 <button id="toggleButton">使い方</button>
 <div id="content" class="hidden">
 	<div class="circle">
 	<ul>
-		<li><span class="brown">ストックリスト</span>に必要なものを入力→<br>&nbsp;&nbsp;ストックが不足していると<span class="pink">お買い物リスト</span>に反映される</li>
-		<li >無事に購入したら<span class="pink">お買い物リスト</span>にチェックを入れる→<br>&nbsp;&nbsp;<span class="brown">ストックリスト</span>にストック数が反映される</li>
-		<li>使い切ったら<span class="brown">ストックリスト</span>にチェックを入れる→<br>&nbsp;&nbsp;<span class="brown">ストックリスト</span>のストック数に反映される</li>
+		<li><a href="AddStockList" class="pink">ストックリスト</a>に家にあるものを入力</li>
+		<li><a href="AddShoppingList" class="blue">お買い物リスト</a>に家に無いものを入力</li>
+		<li>購入したら<a href="ShoppingList" class="blue">お買い物リスト</a>にチェックを入れる<br>&nbsp;&nbsp;→<a href="StockList" class="pink">ストックリスト</a>に反映される</li>
+		<li>使い切ったら<a href="StockList" class="pink">ストックリスト</a>にチェックを入れる<br>&nbsp;&nbsp;→<a href="ShoppingList" class="blue">お買い物リスト</a>に反映される</li>
+		<li>不要になったら<a href="DeleteStockList" class="orange">一覧表</a>から削除する</li>
+		<li>取扱い店が限られている商品は店舗名も一緒にメモする</li>	
 	</ul>
 	</div>
 </div>
 <script src="javaScript/instructions.js"></script>
 </div>
-<div class="shopping wrapper">
-	<article>
-		<a href="ShoppingList"><img class="shoppingList" src="<c:url value='/images/shoppingList.png' />" alt="お買い物リスト"></a>
-	</article>
-	<aside>
+<div class="center"><a href="DeleteStockList"><img class="outerBorder  mini" src="<c:url value='/images/deleteList.png' />" alt="ストックリストから削除"></a></div>
+<div class="center wrapper">
+	<div class="item">
+		<a href="ShoppingList"><img class="outerBorder" src="<c:url value='/images/shoppingList.png' />" alt="お買い物リスト"></a>
+	</div>
+	<div class="item">
 		<p>買い忘れなかったかなー。</p>
-	</aside>
+	</div>
 </div>
-<div class="stock wrapper">
-	<article>
-		<p>アレまだあったっけなー。</p>
-	</article> 
-	<aside>
-		<a href="#"><img class="stockList" src="<c:url value='/images/inventoryList.png' />" alt="ストックリスト"></a>	
-	</aside>
+<div class="center wrapper">
+	<div class="item">
+		<p>まだあったかなー。</p>
+	</div> 
+	<div class="item">
+		<a href="StockList"><img class="outerBorder" src="<c:url value='/images/inventoryList.png' />" alt="ストックリスト"></a>	
+	</div>
 </div>
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

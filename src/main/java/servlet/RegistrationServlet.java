@@ -27,10 +27,9 @@ public class RegistrationServlet extends HttpServlet {
 	    String user_id = request.getParameter("user_id");
 	    String pass = request.getParameter("pass");
 	    String mail = request.getParameter("mail");
-	    String name = request.getParameter("name");
 
 	    // Registrationオブジェクトを作成
-	    Registration registration = new Registration(user_id, pass, mail, name);
+	    Registration registration = new Registration(user_id, pass, mail);
 
 	    // RegistrationDAOを使用してユーザーの登録を試みる
 	    RegistrationDAO registrationDAO = new RegistrationDAO();
@@ -41,8 +40,7 @@ public class RegistrationServlet extends HttpServlet {
         if (result == user_id) {
             // 登録成功の処理
         	request.setAttribute("message", "新規登録が完了しました！");
-            request.setAttribute("user_id", result); // ユーザー名をリクエスト属性に設定
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/accountOK.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
             dispatcher.forward(request, response);
         } else {
             // 登録に失敗した場合、エラーメッセージをセットして新規登録画面にフォワード
