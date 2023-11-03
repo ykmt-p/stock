@@ -5,10 +5,13 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 	<title>追加</title>
+	<meta name="description" content="買い物リストとストック管理を紐付けて書い忘れを防ぐWEBアプリ">
+	<link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=philosopher">
 	<link rel="stylesheet" href="css/style.css"> 
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" >
 </head>
 <body>
 <div class="wrapper">
@@ -33,6 +36,7 @@
         <input type="hidden" name="quantity" value="0">
 	    <input class="right" type="submit" value="お買い物リストに追加">
 	</form>
+	<jsp:include page="footer.jsp"/>
 </body>
 <script src="javaScript/validation.js"></script>
 </html>

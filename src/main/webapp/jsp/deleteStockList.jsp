@@ -5,10 +5,13 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>削除</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<title>一覧表</title>
+	<meta name="description" content="買い物リストとストック管理を紐付けて書い忘れを防ぐWEBアプリ">
+	<link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=philosopher">
 	<link rel="stylesheet" href="css/style.css"> 
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" >
 </head>
 <body>
 <div class="wrapper">
@@ -16,7 +19,7 @@
 	<div class="item"><a href="ShoppingList"><img class="outerBorder" src="<c:url value='/images/miniShoppingList.png' />" alt="お買い物リスト"></a></div>
 	<div class="item"><a href="StockList"><img class="outerBorder" src="<c:url value='/images/miniInventoryList.png' />" alt="ストックリスト"></a></div>
 </div>
-<h1 class="center formTitle">ストックしておきたいもの一覧表</h1>
+<h1 class="center formTitle" id="small">ストックしておきたいもの一覧表</h1>
 	<!-- デリートストックリストを表示 -->
 	<div class="outerBorder center" id="list">
 		<c:choose>
@@ -43,6 +46,7 @@
         </c:otherwise>
         </c:choose>
 	</div>
+	<jsp:include page="footer.jsp"/>
 </body>
 <script src="javaScript/checkList.js"></script>
 <script src="javaScript/checkbox.js"></script>

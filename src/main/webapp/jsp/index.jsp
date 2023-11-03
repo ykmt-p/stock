@@ -5,10 +5,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>STOCK</title>
+<meta name="description" content="買い物リストとストック管理を紐付けて書い忘れを防ぐWEBアプリ">
+<link rel="icon" type="image/png" href="images/favicon.png">
 <%--CSS --%>
 <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" >
 </head>
 <body>
 <jsp:include page="header.jsp"/>
@@ -28,21 +33,13 @@
 </div>
 <script src="javaScript/instructions.js"></script>
 </div>
-<div class="center"><a href="DeleteStockList"><img class="outerBorder  mini" src="<c:url value='/images/deleteList.png' />" alt="ストックリストから削除"></a></div>
-<div class="center wrapper">
+<div class="center"><a href="DeleteStockList"><img class="outerBorder  mini" src="<c:url value='/images/allThings.png' />" alt="ストックリストから削除"></a></div>
+<div class="center wrapper" id="index">
 	<div class="item">
 		<a href="ShoppingList"><img class="outerBorder" src="<c:url value='/images/shoppingList.png' />" alt="お買い物リスト"></a>
 	</div>
 	<div class="item">
-		<p>買い忘れなかったかなー。</p>
-	</div>
-</div>
-<div class="center wrapper">
-	<div class="item">
-		<p>まだあったかなー。</p>
-	</div> 
-	<div class="item">
-		<a href="StockList"><img class="outerBorder" src="<c:url value='/images/inventoryList.png' />" alt="ストックリスト"></a>	
+		<a href="StockList"><img class="outerBorder" src="<c:url value='/images/inventoryList.png' />" alt="ストックリスト"></a>
 	</div>
 </div>
 <jsp:include page="footer.jsp"/>
