@@ -10,18 +10,18 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import model.DeleteStock;
+import model.AllThings;
 
-public class DeleteStockListDAO {
+public class AllThingsDAO {
 	//データベース接続に使う情報
     private static final String JDBC_URL = "jdbc:h2:tcp://localhost/~/example";
     private static final String DB_USER = "sa";
     private static final String DB_PASS = "";
 
     //ShoppingListを参照する
-    public List<DeleteStock> findAll(HttpSession session) {
+    public List<AllThings> findAll(HttpSession session) {
         String targetUserId = (String) session.getAttribute("user_id");
-        List<DeleteStock> deleteStockList = new ArrayList<>();
+        List<AllThings> allThingsList = new ArrayList<>();
         //JDBCドライバを読み込む
         try {
             Class.forName("org.h2.Driver");
@@ -43,16 +43,16 @@ public class DeleteStockListDAO {
                 int quantity = rs.getInt("QUANTITY");
                 String store = rs.getString("STORE");
 
-                // 取得したデータで新しいDeleteStockオブジェクトを作成
-                DeleteStock deleteStockItem = new DeleteStock(targetUserId, product_name, quantity, store);
+                // 取得したデータで新しいAllThingsオブジェクトを作成
+                AllThings allThingsItem = new AllThings(targetUserId, product_name, quantity, store);
 
                 // 新しいDeleteオブジェクトをリストに追加
-                deleteStockList.add(deleteStockItem);
+                allThingsList.add(allThingsItem);
             }
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }
-        return deleteStockList;
+        return allThingsList;
     }
 }

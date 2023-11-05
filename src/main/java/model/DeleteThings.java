@@ -2,15 +2,15 @@ package model;
 
 import java.io.Serializable;
 
-public class Delete implements Serializable {
+public class DeleteThings implements Serializable {
     private String user_id;
     private String product_name;
     private int quantity;
 
-    public Delete() {
+    public DeleteThings() {
     }
 
-    public Delete(String user_id, String product_name, int quantity) {
+    public DeleteThings(String user_id, String product_name, int quantity) {
         this.user_id = user_id;
         this.product_name = product_name;
         this.quantity = quantity;

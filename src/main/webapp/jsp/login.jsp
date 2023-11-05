@@ -29,7 +29,7 @@
 	</form>
 </div>
 <div class="center">
-	<form action="Welcome" method="get">
+	<form action="/Welcome" method="get">
 		<input type="submit" value="戻る"/>
 	</form>
 </div>

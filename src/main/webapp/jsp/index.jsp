@@ -26,14 +26,14 @@
 		<li><a href="AddShoppingList" class="blue">お買い物リスト</a>に家に無いものを入力</li>
 		<li>購入したら<a href="ShoppingList" class="blue">お買い物リスト</a>にチェックを入れる<br>&nbsp;&nbsp;→<a href="StockList" class="pink">ストックリスト</a>に反映される</li>
 		<li>使い切ったら<a href="StockList" class="pink">ストックリスト</a>にチェックを入れる<br>&nbsp;&nbsp;→<a href="ShoppingList" class="blue">お買い物リスト</a>に反映される</li>
-		<li>不要になったら<a href="DeleteStockList" class="orange">一覧表</a>から削除する</li>
+		<li>不要になったら<a href="AllThings" class="orange">一覧表</a>から削除する</li>
 		<li>取扱い店が限られている商品は店舗名も一緒にメモする</li>	
 	</ul>
 	</div>
 </div>
 <script src="javaScript/instructions.js"></script>
 </div>
-<div class="center"><a href="DeleteStockList"><img class="outerBorder  mini" src="<c:url value='/images/allThings.png' />" alt="ストックリストから削除"></a></div>
+<div class="center"><a href="AllThings"><img class="outerBorder  mini" src="<c:url value='/images/allThings.png' />" alt="ストックリストから削除"></a></div>
 <div class="center wrapper" id="index">
 	<div class="item">
 		<a href="ShoppingList"><img class="outerBorder" src="<c:url value='/images/shoppingList.png' />" alt="お買い物リスト"></a>

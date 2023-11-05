@@ -18,7 +18,7 @@
 	<div class="wrapper">
 		<div class="item"><jsp:include page="header.jsp"/></div>
 		<div class="item"><a href="AddStockList"><img class="outerBorder" src="<c:url value='/images/addList.png' />" alt="ストックリストに追加"></a></div>
-		<div class="item"><a href="DeleteStockList"><img class="outerBorder" src="<c:url value='/images/allThings.png' />" alt="一覧表"></a></div>
+		<div class="item"><a href="AllThings"><img class="outerBorder" src="<c:url value='/images/allThings.png' />" alt="一覧表"></a></div>
 	</div>
 	<h1 class="center formTitle">ストックリスト</h1>
 	<!-- ストックリストを表示 -->

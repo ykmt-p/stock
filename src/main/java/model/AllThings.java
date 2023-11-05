@@ -2,16 +2,16 @@ package model;
 
 import java.io.Serializable;
 
-public class DeleteStock implements Serializable{
+public class AllThings implements Serializable{
 	
 	private String user_id;
 	private String product_name;
 	private int quantity;
 	private String store;
 	
-	public DeleteStock () {}
+	public AllThings () {}
 	
-	public DeleteStock(String user_id, String product_name, int quantity, String store) {
+	public AllThings(String user_id, String product_name, int quantity, String store) {
 		this.user_id = user_id;
 	    this.product_name = product_name;
 	    this.quantity = quantity;

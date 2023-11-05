@@ -8,16 +8,16 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import model.Delete;
+import model.DeleteThings;
 
-public class DeleteDAO {
+public class DeleteThingsDAO {
     // データベース接続に使う情報
     private static final String JDBC_URL = "jdbc:h2:tcp://localhost/~/example";
     private static final String DB_USER = "sa";
     private static final String DB_PASS = "";
 
     // ストックする必要がなくなったものをDBのSHOPPINGから削除する処理
-    public void deleteAll(List<Delete> deleteList, HttpServletRequest request) throws SQLException {
+    public void deleteAll(List<DeleteThings> deleteThingsList, HttpServletRequest request) throws SQLException {
         try {
             Class.forName("org.h2.Driver");
         } catch (ClassNotFoundException e) {
@@ -26,11 +26,11 @@ public class DeleteDAO {
 
         try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS)) {
             // すべての商品情報を処理
-            for (Delete delete : deleteList) {
+            for (DeleteThings deleteThings : deleteThingsList) {
                 String sql = "DELETE FROM SHOPPING WHERE user_id = ? AND product_name = ?";
                 PreparedStatement ps = conn.prepareStatement(sql);
-                ps.setString(1, delete.getUser_id());
-                ps.setString(2, delete.getProduct_name());
+                ps.setString(1, deleteThings.getUser_id());
+                ps.setString(2, deleteThings.getProduct_name());
                 ps.executeUpdate();
             }
         } catch (SQLException e) {

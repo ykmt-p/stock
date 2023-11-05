@@ -18,6 +18,7 @@
 	<div class="item"><jsp:include page="header.jsp"/></div>
 	<div class="item"><a href="ShoppingList"><img class="outerBorder" src="<c:url value='/images/miniShoppingList.png' />" alt="お買い物リスト"></a></div>
 	<div class="item"><a href="StockList"><img class="outerBorder" src="<c:url value='/images/miniInventoryList.png' />" alt="ストックリスト"></a></div>
+	<div class="item"><a href="AllThings"><img class="outerBorder" src="<c:url value='/images/allThings.png' />" alt="一覧表"></a></div>
 </div>
 <h1 class="formTitle">お買い物リストに追加</h1>
 		<c:if test="${product_name != null}">

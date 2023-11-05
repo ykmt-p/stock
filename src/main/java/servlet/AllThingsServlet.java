@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.DeleteStockListDAO;
-import model.DeleteStock;
+import dao.AllThingsDAO;
+import model.AllThings;
 
 
-@WebServlet("/DeleteStockList")
-public class DeleteStockListServlet extends HttpServlet {
+@WebServlet("/AllThings")
+public class AllThingsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
@@ -24,24 +24,18 @@ public class DeleteStockListServlet extends HttpServlet {
 		 // ログインした時にユーザーが入力したユーザーIDを取得
 	    HttpSession session = request.getSession();
 
-	    // DeleteStockListDAOを使用してお買い物リストの参照を試みる
-	    DeleteStockListDAO deleteStockListDAO = new DeleteStockListDAO();
+	    // AllThingsDAOを使用してお買い物リストの参照を試みる
+	    AllThingsDAO allThingsDAO = new AllThingsDAO();
 	    
 	    // findAllメソッドの戻り値を取得    
-	    List<DeleteStock> result = deleteStockListDAO.findAll(session);
+	    List<AllThings> result = allThingsDAO.findAll(session);
 
 	    // 取得したストックリストをリクエスト属性に設定
-	    request.setAttribute("deleteStockList", result);
+	    request.setAttribute("allThingsList", result);
 
 	    // フォワード
-	    RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/deleteStockList.jsp");
+	    RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/allThings.jsp");
 	    dispatcher.forward(request, response);
 	
 	}
-
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	   
-	}
-
 }

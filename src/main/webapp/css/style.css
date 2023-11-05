@@ -293,8 +293,10 @@ li .orange {
 	.footer {
 		margin-top: 30px;
 	}
+	.logo {
+		margin-top: 50px;
+	}
 }
-
-@media (min-width: 782px) {
-    
+@media (min-width:780px) {
+	
 }

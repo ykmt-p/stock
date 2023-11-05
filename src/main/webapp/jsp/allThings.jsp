@@ -16,18 +16,18 @@
 <body>
 <div class="wrapper">
 	<div class="item"><jsp:include page="header.jsp"/></div>
-	<div class="item"><a href="ShoppingList"><img class="outerBorder" src="<c:url value='/images/miniShoppingList.png' />" alt="お買い物リスト"></a></div>
-	<div class="item"><a href="StockList"><img class="outerBorder" src="<c:url value='/images/miniInventoryList.png' />" alt="ストックリスト"></a></div>
+	<div class="item"><a href="AddShoppingList"><img class="outerBorder" src="<c:url value='/images/miniShoppingList.png' />" alt="お買い物リストに追加"></a></div>
+	<div class="item"><a href="AddStockList"><img class="outerBorder" src="<c:url value='/images/miniInventoryList.png' />" alt="ストックリストに追加"></a></div>
 </div>
 <h1 class="center formTitle" id="small">ストックしておきたいもの一覧表</h1>
 	<!-- デリートストックリストを表示 -->
 	<div class="outerBorder center" id="list">
 		<c:choose>
-    	<c:when test="${not empty deleteStockList}">
+    	<c:when test="${not empty AllThings}">
     		<!-- デリートストックリストが空でない場合 -->
-        	<form action="Delete" method="post">
+        	<form action="DeleteThings" method="post">
             <ul>
-                <c:forEach items="${deleteStockList}" var="item">
+                <c:forEach items="${Allthings}" var="item">
                     <li>
                     <!-- 商品名と店舗を表示 -->
                     <input type="checkbox" name="selectedItems" value="${item.getQuantity()}-${item.getProduct_name()}-${item.getUser_id()}" onclick="checkIfAnyCheckboxChecked();" /> 

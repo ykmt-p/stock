@@ -17,7 +17,7 @@
 	<div class="wrapper">
 		<div class="item"><jsp:include page="header.jsp"/></div>
 		<div class="item"><a href="AddShoppingList"><img class="outerBorder" src="<c:url value='/images/addList.png' />" alt="お買い物リストに追加"></a></div>
-		<div class="item"><a href="DeleteStockList"><img class="outerBorder" src="<c:url value='/images/allThings.png' />" alt="一覧表"></a></div>
+		<div class="item"><a href="AllThingss"><img class="outerBorder" src="<c:url value='/images/allThings.png' />" alt="一覧表"></a></div>
 	</div>
 	<h1 class="center formTitle">お買い物リスト</h1>
 	<!-- お買い物リストを表示 -->
