@@ -19,6 +19,20 @@
 	<div class="item"><a href="AddShoppingList"><img class="outerBorder" src="<c:url value='/images/miniShoppingList.png' />" alt="お買い物リストに追加"></a></div>
 	<div class="item"><a href="AddStockList"><img class="outerBorder" src="<c:url value='/images/miniInventoryList.png' />" alt="ストックリストに追加"></a></div>
 </div>
+<!-- パンくずリストを表示 -->
+	<ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+  		<li itemprop="itemListElement" itemscope　itemtype="https://schema.org/ListItem">
+      		<a itemprop="item" href="Main">
+        		<span itemprop="name">ホーム</span></a>
+      		<meta itemprop="position" content="1" />
+  		</li>
+  	<!-- 2つめ -->
+  		<li itemprop="itemListElement" itemscope　itemtype="https://schema.org/ListItem">
+      		<a itemprop="item" href="AllThings">
+       	 	<span itemprop="name">一覧表</span></a>
+     		 <meta itemprop="position" content="2" />
+  		</li>
+	</ol>
 <h1 class="center formTitle" id="small">ストックしておきたいもの一覧表</h1>
 	<!-- デリートストックリストを表示 -->
 	<div class="outerBorder center" id="list">

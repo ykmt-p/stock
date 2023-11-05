@@ -111,6 +111,21 @@ select {
 .outerBorder {
 	border-radius: 15px;
 }
+.breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.breadcrumb li {
+  margin-right: 5px;
+}
+
+.breadcrumb li+li:before {
+  content: ">";
+  margin-right: 5px;
+}
 /* ボタンが無効な場合のスタイル */
 button:disabled {
   background-color: rgb(255, 241, 214);
@@ -272,10 +287,6 @@ li .orange {
 		margin-bottom: 20px;
 	}
 	/* welcome */
-	.title {
-		font-size: large;
-		margin-top: 150px;
-	}
 	.introduction {
 		font-size: small;
 	}
@@ -296,7 +307,4 @@ li .orange {
 	.logo {
 		margin-top: 50px;
 	}
-}
-@media (min-width:780px) {
-	
 }

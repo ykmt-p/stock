@@ -23,7 +23,7 @@ public class AddShoppingListServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/addShoppingList.jsp");
 	    dispatcher.forward(request, response);
 	}
-
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//ログインした時にユーザーが入力したユーザーIDを取得
 		HttpSession session = request.getSession();

@@ -17,8 +17,22 @@
 	<div class="wrapper">
 		<div class="item"><jsp:include page="header.jsp"/></div>
 		<div class="item"><a href="AddShoppingList"><img class="outerBorder" src="<c:url value='/images/addList.png' />" alt="お買い物リストに追加"></a></div>
-		<div class="item"><a href="AllThingss"><img class="outerBorder" src="<c:url value='/images/allThings.png' />" alt="一覧表"></a></div>
+		<div class="item"><a href="AllThings"><img class="outerBorder" src="<c:url value='/images/allThings.png' />" alt="一覧表"></a></div>
 	</div>
+	<!-- パンくずリストを表示 -->
+	<ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+  		<li itemprop="itemListElement" itemscope　itemtype="https://schema.org/ListItem">
+      		<a itemprop="item" href="Main">
+        		<span itemprop="name">ホーム</span></a>
+      		<meta itemprop="position" content="1" />
+  		</li>
+  	<!-- 2つめ -->
+  		<li itemprop="itemListElement" itemscope　itemtype="https://schema.org/ListItem">
+      		<a itemprop="item" href="ShoppingList">
+       	 	<span itemprop="name">お買い物リスト</span></a>
+     		 <meta itemprop="position" content="2" />
+  		</li>
+	</ol>
 	<h1 class="center formTitle">お買い物リスト</h1>
 	<!-- お買い物リストを表示 -->
 	<div class="center outerBorder" id="list">

@@ -16,7 +16,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" >
 </head>
 <body>
-<jsp:include page="header.jsp"/>
+<div class="bigTitle">
+	<jsp:include page="header.jsp"/>
+</div>
 <div class="center">
 <button id="toggleButton">使い方</button>
 <div id="content" class="hidden">

@@ -20,6 +20,26 @@
 	<div class="item"><a href="StockList"><img class="outerBorder" src="<c:url value='/images/miniInventoryList.png' />" alt="ストックリスト"></a></div>
 	<div class="item"><a href="AllThings"><img class="outerBorder" src="<c:url value='/images/allThings.png' />" alt="一覧表"></a></div>
 </div>
+<!-- パンくずリストを表示 -->
+	<ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+  		<li itemprop="itemListElement" itemscope　itemtype="https://schema.org/ListItem">
+      		<a itemprop="item" href="Main">
+        		<span itemprop="name">ホーム</span></a>
+      		<meta itemprop="position" content="1" />
+  		</li>
+  	<!-- 2つめ -->
+  		<li itemprop="itemListElement" itemscope　itemtype="https://schema.org/ListItem">
+      		<a itemprop="item" href="ShoppingList">
+       	 	<span itemprop="name">お買い物リスト</span></a>
+     		 <meta itemprop="position" content="2" />
+  		</li>
+  	<!-- 3つめ -->
+  		<li itemprop="itemListElement" itemscope　itemtype="https://schema.org/ListItem">
+      		<a itemprop="item" href="AddShoppingList">
+       	 	<span itemprop="name">お買い物リストに追加</span></a>
+     		 <meta itemprop="position" content="3" />
+  		</li>
+	</ol>
 <h1 class="formTitle">お買い物リストに追加</h1>
 		<c:if test="${product_name != null}">
     		<h2><c:out value="${product_name}"/>を追加しました！</h2>
