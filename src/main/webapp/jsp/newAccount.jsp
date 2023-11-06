@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>STOCK ユーザー登録</title>
-<meta name="description" content="買い物リストとストック管理を紐付けて書い忘れを防ぐWEBアプリ">
+<meta name="description" content="買い物リストとストック管理を紐付けて買い忘れを防ぐWEBアプリ">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <%--CSS --%>
 <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
@@ -25,7 +25,7 @@
 	<form action="Registration" method="post">
     	  ユーザーID：<br><input type="text" name="user_id"/><br>
     	  パスワード：<br><input type="password" name="pass"/><br>
-    	メールアドレス：<br><input type="text" name="mail"/>
+    	メールアドレス：<br><input type="email" name="mail" required/><br>
     	<input type="submit" id="loginButton"  value="登  録"/>
 	</form>
 </div>

@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>STOCK</title>
-<meta name="description" content="買い物リストとストック管理を紐付けて書い忘れを防ぐWEBアプリ">
+<meta name="description" content="買い物リストとストック管理を紐付けて買い忘れを防ぐWEBアプリ">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <%--CSS --%>
 <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">

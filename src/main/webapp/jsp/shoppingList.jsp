@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 	<title>お買い物リスト</title>
-	<meta name="description" content="買い物リストとストック管理を紐付けて書い忘れを防ぐWEBアプリ">
+	<meta name="description" content="買い物リストとストック管理を紐付けて買い忘れを防ぐWEBアプリ">
 	<link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
 	<link rel="stylesheet" href="css/style.css"> 
@@ -17,6 +17,7 @@
 	<div class="wrapper">
 		<div class="item"><jsp:include page="header.jsp"/></div>
 		<div class="item"><a href="AddShoppingList"><img class="outerBorder" src="<c:url value='/images/addList.png' />" alt="お買い物リストに追加"></a></div>
+		<div class="item"><a href="StockList"><img class="outerBorder" src="<c:url value='/images/miniInventoryList.png' />" alt="ストックリスト"></a></div>
 		<div class="item"><a href="AllThings"><img class="outerBorder" src="<c:url value='/images/allThings.png' />" alt="一覧表"></a></div>
 	</div>
 	<!-- パンくずリストを表示 -->

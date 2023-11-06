@@ -17,26 +17,24 @@ public class AllThingsDAO {
     private static final String JDBC_URL = "jdbc:h2:tcp://localhost/~/example";
     private static final String DB_USER = "sa";
     private static final String DB_PASS = "";
-
-    //ShoppingListを参照する
+    
     public List<AllThings> findAll(HttpSession session) {
-        String targetUserId = (String) session.getAttribute("user_id");
+        String targetUserId = (String) session.getAttribute("user_id"); 
         List<AllThings> allThingsList = new ArrayList<>();
-        //JDBCドライバを読み込む
+        
         try {
             Class.forName("org.h2.Driver");
         } catch (ClassNotFoundException e) {
             throw new IllegalStateException("JDBCドライバを読み込めませんでした");
         }
-        //データベースに接続
+        
         try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS)) {
-            //SELECT文の準備
             String sql = "SELECT * FROM SHOPPING WHERE USER_ID = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, targetUserId);
-            //SELECTを実行
+            
             ResultSet rs = pstmt.executeQuery();
-            //SELECT文の結果をArrayListに格納
+            
             while (rs.next()) {
                 //結果から必要なデータを取得
                 String product_name = rs.getString("PRODUCT_NAME");
@@ -46,7 +44,7 @@ public class AllThingsDAO {
                 // 取得したデータで新しいAllThingsオブジェクトを作成
                 AllThings allThingsItem = new AllThings(targetUserId, product_name, quantity, store);
 
-                // 新しいDeleteオブジェクトをリストに追加
+                // 新しいAllThingsオブジェクトをリストに追加
                 allThingsList.add(allThingsItem);
             }
         } catch (SQLException e) {

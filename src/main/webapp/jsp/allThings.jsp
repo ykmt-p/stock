@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 	<title>一覧表</title>
-	<meta name="description" content="買い物リストとストック管理を紐付けて書い忘れを防ぐWEBアプリ">
+	<meta name="description" content="買い物リストとストック管理を紐付けて買い忘れを防ぐWEBアプリ">
 	<link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
 	<link rel="stylesheet" href="css/style.css"> 
@@ -16,8 +16,8 @@
 <body>
 <div class="wrapper">
 	<div class="item"><jsp:include page="header.jsp"/></div>
-	<div class="item"><a href="AddShoppingList"><img class="outerBorder" src="<c:url value='/images/miniShoppingList.png' />" alt="お買い物リストに追加"></a></div>
-	<div class="item"><a href="AddStockList"><img class="outerBorder" src="<c:url value='/images/miniInventoryList.png' />" alt="ストックリストに追加"></a></div>
+	<div class="item"><a href="ShoppingList"><img class="outerBorder" src="<c:url value='/images/miniShoppingList.png' />" alt="お買い物リスト"></a></div>
+	<div class="item"><a href="StockList"><img class="outerBorder" src="<c:url value='/images/miniInventoryList.png' />" alt="ストックリスト"></a></div>
 </div>
 <!-- パンくずリストを表示 -->
 	<ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
@@ -34,14 +34,14 @@
   		</li>
 	</ol>
 <h1 class="center formTitle" id="small">ストックしておきたいもの一覧表</h1>
-	<!-- デリートストックリストを表示 -->
+	<!-- 一覧表を表示 -->
 	<div class="outerBorder center" id="list">
 		<c:choose>
-    	<c:when test="${not empty AllThings}">
+    	<c:when test="${not empty allThingsList}">
     		<!-- デリートストックリストが空でない場合 -->
         	<form action="DeleteThings" method="post">
             <ul>
-                <c:forEach items="${Allthings}" var="item">
+                <c:forEach items="${allThingsList}" var="item">
                     <li>
                     <!-- 商品名と店舗を表示 -->
                     <input type="checkbox" name="selectedItems" value="${item.getQuantity()}-${item.getProduct_name()}-${item.getUser_id()}" onclick="checkIfAnyCheckboxChecked();" /> 

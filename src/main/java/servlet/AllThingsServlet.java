@@ -21,10 +21,9 @@ public class AllThingsServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 // ログインした時にユーザーが入力したユーザーIDを取得
+
 	    HttpSession session = request.getSession();
 
-	    // AllThingsDAOを使用してお買い物リストの参照を試みる
 	    AllThingsDAO allThingsDAO = new AllThingsDAO();
 	    
 	    // findAllメソッドの戻り値を取得    
