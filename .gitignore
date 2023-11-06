@@ -1,1 +1,32 @@
 /build/
+# .gitignore
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+Thumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code
+.vscode/
+
+# Node modules
+node_modules/
+
+# System files
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+ehthumbs_vista.db
+Icon?
+ehthumbs.exe
+Thumbs.db
