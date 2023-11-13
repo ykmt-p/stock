@@ -1,1 +1,1 @@
-web: java -jar User/yuka/apache-tomcat-9.0.82/webapps/stock.war
+web: java -jar target/stock-1.0.0-SNAPSHOT.jar
