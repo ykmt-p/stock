@@ -10,15 +10,15 @@ import model.Registration;
 
 public class RegistrationDAO { 
 	//データベース接続に使う情報
-    private static final String JDBC_URL = "jdbc:h2:tcp://localhost/~/example";
-    private static final String DB_USER = "sa";
-    private static final String DB_PASS = "";
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/STOCK";
+    private static final String DB_USER = "root";
+    private static final String DB_PASS = "yuka9472";
     
     //新規登録の処理
     public  String create(Registration registration) {
     	//JDBCドライバを読み込む
     	try {
-    		Class.forName("org.h2.Driver");
+    		Class.forName("com.mysql.cj.jdbc.Driver");
     	} catch (ClassNotFoundException e) {
     		throw new IllegalStateException("JDBCドライバを読み込めませんでした");
    	 	}
