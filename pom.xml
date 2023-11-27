@@ -38,7 +38,7 @@
               <configuration>
                   <archive>
                       <manifest>
-                          <mainClass>net.sample_sample.servlet.WelcomeServlet</mainClass>
+                          <mainClass>net.sample_sample.App</mainClass>
                       </manifest>
                   </archive>
               </configuration>
