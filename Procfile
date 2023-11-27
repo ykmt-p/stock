@@ -1,1 +1,1 @@
-web: java -jar stock/target/stock-1.0-SNAPSHOT.jar
+web: java -jar target/stock-1.0-SNAPSHOT.jar
