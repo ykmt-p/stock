@@ -1,0 +1,316 @@
+@charset "UTF-8";
+
+/* 共通 */
+html {
+	font-size: 100%;
+	font-family: "M PLUS Rounded 1c";
+	max-width: 781px;
+	margin:20px 80px;
+}
+body {
+	line-height: 2;
+	color:#432;
+	background-color: rgb(255, 249, 244);
+	max-width: 800px;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style-type: none;
+}
+img {
+	max-width: 100%;
+}
+h2 {
+	font-size: medium;
+}
+.center {
+	display: flex;
+	justify-content: center;
+}
+.mini {
+	max-width: 150px;
+}
+form div{
+	margin-bottom: 14px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+	background: none;
+	border:3px #ebe4c9 solid;
+	border-radius: 5px;
+	padding: 7px;
+	font-size: 1rem;
+	vertical-align: top;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+	width: 70%;
+	max-width: 240px;
+}
+textarea {
+	width: 100%;
+	max-width: 480px;
+	height: 6rem;
+}
+input[type="submit"] {
+	color: #432;
+	background: #ebe4c9;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	line-height: 2;
+	padding: 1px 8px;
+	margin-top: 10px;
+}
+input[type="checkbox"] {
+  /* チェックボックスの外枠 */
+  appearance: none; /* デフォルトのスタイルを削除 */
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ebe4c9; /* チェックボックスの色 */
+  cursor: pointer;
+  &:checked::before {
+    /* チェックボックスの内側の✓ */
+    display: block;
+    content: "✓";
+    line-height: 1.2;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgb(196, 161, 95); /* チェックマークの色 */
+    opacity: 1;    
+  }
+}
+.wrapper {
+	display:flex;
+}
+.item {
+	justify-content: space-around;
+	margin: 10px;
+}
+select {
+	background: none;
+	border:1px rgb(202, 226, 227) solid;
+	border-radius: 5px;
+	padding: 7px;
+	font-size: 1rem;
+}
+.title {
+	margin-top: 200px;
+	margin-bottom: 30px;
+}
+.formTitle {
+	margin-top: 80px;
+	margin-bottom: 30px;
+}
+.outerBorder {
+	border-radius: 15px;
+}
+.breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.breadcrumb li {
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+.breadcrumb li+li:before {
+  content: ">";
+  margin-right: 5px;
+}
+.breadcrumb a {
+	color: rgb(75, 73, 62);
+}
+/* welcome */
+.introduction {
+	margin-bottom: 40px;
+}
+.video {
+	width: 400;
+	height: 400px;
+}
+.welcomeButtonContainar {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+#loginButton {
+	margin: 10px 0px 50px 230px;
+}
+.slider {
+    width: 50%;
+    margin:0 auto;
+}
+/* newAccount */
+#registrationButton {
+	margin: 10px;
+}
+.alert alert-danger {
+	color: rgb(203, 51, 53);
+	margin-bottom: 20px;
+}
+/* header */
+.logo {
+	width:fit-content;
+}
+/* footer */
+footer {
+	background-color: #ebe4c9;
+	text-align: center;
+	padding: 26px 0;
+	margin-top: 70px;
+}
+footer p {
+	font-size: 0.875rem;
+}
+
+/* index */
+button {
+	background-color: #ebe4c9;
+	border-radius: 10px;
+	padding: 3px 12px;
+	margin-right: 25px;
+	align-items: center;
+}
+#toggleButton {
+	display: flex;
+	justify-content: right;
+	margin: 40px;
+}
+.hidden {
+	display: none;
+	justify-content: right;
+}
+.circle ul {
+	list-style-type: circle;
+}
+li .blue {
+	color: rgb(189, 212, 214);
+	font-weight: bold;
+}
+li .pink {
+	color: rgb(235, 182, 191);
+	font-weight: bold;
+}
+li .orange {
+	color: #ffc35a;
+	font-weight: bold;
+}
+#index {
+	margin-top: 50px;
+}
+.item p {
+	margin: 50px 80px;
+}
+/*shoppingList*/
+.shoppingListTitle {
+	display: flex;
+	justify-content: center;
+}
+#list {
+	border: 5px double rgb(203, 141, 62);
+    padding: 20px;
+}
+/* addShoppingList */
+.addListForm {
+    border: 5px dashed rgb(202, 226, 227);
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+    max-width: 480px;
+}
+.right {
+	margin-left: 200px;
+}
+/* スマホ用*/
+@media (max-width: 375px) {
+     html {
+		
+		margin:15px;
+	}
+	h2 {
+		font-size:large;
+	}
+	.title {
+		font-size: large;
+	}
+	.mini {
+		max-width: 100px;
+	}
+	form div{
+		margin-bottom: 5px;
+	}
+	.circle {
+		font-size:x-small;
+	}
+	.item {
+		margin: 3px;
+	}
+	#toggleButton {
+	font-size: x-small;
+	color: #432;
+	margin: 30px;
+	}
+	input[type="text"],
+	input[type="email"],
+	input[type="password"] {
+	width: 80%;
+	max-width: 350px;
+	}
+	textarea {
+	width: 80%;
+	max-width: 350px;
+	height: 6rem;
+	}
+	input[type="checkbox"] {
+  	/* チェックボックスの外枠 */
+  	width: 30px;
+  	height: 30px;
+  	 &:checked::before {
+    	/* チェックボックスの内側の✓ */
+    	font-size: 20px;
+  		 }
+	}
+	.right {
+		margin-top: 10px;
+		margin-left: 120px;
+	}
+	.outerBorder {
+		border-radius: 10px;
+	}
+	.formTitle {
+		font-size: large;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.breadcrumb{
+		font-size: small;
+	}
+	/* welcome */
+	.introduction {
+		font-size: small;
+	}
+	/* index */
+	#index {
+		margin-top: 10px;
+	}
+	#toggleButton {
+		margin: 20px;
+	}
+	/* deleteStockList */
+	#small {
+		font-size: large;
+	}
+	footer {
+		margin-top: 20px;
+	}
+}
