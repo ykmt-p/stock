@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,8 +18,8 @@
 <h1 class="center formTitle">ユーザー情報の新規登録</h1>
 <!-- エラーメッセージを表示 -->
  <c:if test="${not empty errorMessage}">
-    <div class="alert alert-danger">${errorMessage}</div>
-</c:if>
+    <div class="center" style="color: red;">${errorMessage}</div>
+ </c:if>
  <!-- 新規登録フォーム。ユーザー情報の入力を行う -->
  <div class="center">
 	<form action="Registration" method="post">

@@ -16,12 +16,14 @@ public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//フォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/newAccount.jsp");
 	    dispatcher.forward(request, response);
 	}
 	
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    // ユーザーから送信された情報を取得
 	    String user_id = request.getParameter("user_id");

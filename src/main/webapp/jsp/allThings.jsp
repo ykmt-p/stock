@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +22,7 @@
 <!-- パンくずリストを表示 -->
 	<ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
   		<li itemprop="itemListElement" itemscope　itemtype="https://schema.org/ListItem">
-      		<a itemprop="item" href="Main">
+      		<a itemprop="item" href="Index">
         		<span itemprop="name">ホーム</span></a>
       		<meta itemprop="position" content="1" />
   		</li>

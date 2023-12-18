@@ -13,9 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 public class WelcomeServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
-  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+  @Override
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     RequestDispatcher dispatcher = request.getRequestDispatcher(
-        "jsp/welcome.jsp");
+        "/jsp/welcome.jsp");
     dispatcher.forward(request, response);
   }
 }

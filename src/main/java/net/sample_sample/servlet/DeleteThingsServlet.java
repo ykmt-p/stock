@@ -22,7 +22,8 @@ import net.sample_sample.model.DeleteThings;
 public class DeleteThingsServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 商品情報を格納するリストを作成
         List<DeleteThings> deleteThingsList = new ArrayList<>();
 

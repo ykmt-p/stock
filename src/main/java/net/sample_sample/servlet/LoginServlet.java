@@ -17,12 +17,14 @@ import net.sample_sample.model.Login;
 public class LoginServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
-  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+  @Override
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/login.jsp");
     dispatcher.forward(request, response);
   }
 
-  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+  @Override
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    // ユーザーから送信されたユーザーIDとパスワードを取得する。
 	    String user_id = request.getParameter("user_id");
 	    String pass = request.getParameter("pass");

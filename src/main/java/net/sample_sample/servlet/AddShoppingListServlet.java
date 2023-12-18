@@ -18,12 +18,14 @@ import net.sample_sample.model.AddShopping;
 public class AddShoppingListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//フォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/addShoppingList.jsp");
 	    dispatcher.forward(request, response);
 	}
 	
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//ログインした時にユーザーが入力したユーザーIDを取得
 		HttpSession session = request.getSession();

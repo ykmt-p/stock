@@ -154,8 +154,8 @@ select {
 #registrationButton {
 	margin: 10px;
 }
-.alert alert-danger {
-	color: rgb(203, 51, 53);
+#alert-danger {
+	color: rgb(203, 50, 51);
 	margin-bottom: 20px;
 }
 /* header */
