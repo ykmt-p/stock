@@ -5,7 +5,7 @@
 
 ![sample動画](https://github.com/ykmt-p/stock/assets/134045320/15c59d15-9cec-432a-8b87-12349583ffd5)
 ![新規登録動画](https://github.com/ykmt-p/stock/assets/134045320/dec78fe4-fa65-4801-bc57-42aacebee56f)
-![Error動画]()
+![Error動画](https://github.com/ykmt-p/stock/assets/134045320/8275f269-8b15-46a3-b0c7-142ee4ac885f)
 ## サイト概要
 ### テーマ
 買い忘れを防ぐちょっとしたお助けマン
